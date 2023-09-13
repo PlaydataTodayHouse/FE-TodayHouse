@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const WriteList = () => {
   return (
@@ -24,9 +25,9 @@ const WriteList = () => {
         data-popper-placement="bottom"
       >
         <div className="popper-item css-y2j1wi">
-          <a
+          <Link
             className="css-1n4nww"
-            href="/users/sign_in?redirect_to=%2Fcontents%2Fcard_collections%2Fnew%3Fmedia%3Dphoto"
+            to="/media-post"
             style={{
               display: "flex",
               WebkitBoxAlign: "center", // CSS 속성에 하이픈(-)이 포함되어 있으면 카멜 케이스로 변경
@@ -126,10 +127,10 @@ const WriteList = () => {
                 우리 집의 공간과 나의 일상을 기록해 보세요.
               </div>
             </div>
-          </a>
-          <a
+          </Link>
+          <Link
             className="css-1n4nww"
-            href="/users/sign_in?redirect_to=%2Fprojects%2Fwrite"
+            to="/house-tour"
             style={{
               display: "flex",
               WebkitBoxAlign: "center", // CSS 속성에 하이픈(-)이 포함되어 있으면 카멜 케이스로 변경
@@ -250,10 +251,10 @@ const WriteList = () => {
                 집에 관한 이야기를 글로 작성해 보세요.
               </div>
             </div>
-          </a>
-          <a
+          </Link>
+          <Link
             className="css-1n4nww"
-            href="/users/sign_in?redirect_to=%2Fadvices%2Fwrite"
+            to="/tip-post"
             style={{
               display: "flex",
               WebkitBoxAlign: "center", // CSS 속성에 하이픈(-)이 포함되어 있으면 카멜 케이스로 변경
@@ -344,10 +345,10 @@ const WriteList = () => {
                 다양한 인테리어 노하우를 공유해 주세요.
               </div>
             </div>
-          </a>
-          <a
+          </Link>
+          <Link
             className="css-1n4nww"
-            href="/users/sign_in?redirect_to=%2Fproduction_reviews%2Fwrite"
+            to="/review"
             style={{
               display: "flex",
               WebkitBoxAlign: "center", // CSS 속성에 하이픈(-)이 포함되어 있으면 카멜 케이스로 변경
@@ -454,10 +455,10 @@ const WriteList = () => {
                 상품 리뷰를 작성하고 포인트도 받아 보세요.
               </div>
             </div>
-          </a>
-          <a
+          </Link>
+          <Link
             className="css-1n4nww"
-            href="/users/sign_in?redirect_to=%2Fexpert_reviews%2Fnew%3Fsource%3D6"
+            to="#"
             style={{
               display: "flex",
               WebkitBoxAlign: "center", // CSS 속성에 하이픈(-)이 포함되어 있으면 카멜 케이스로 변경
@@ -593,7 +594,7 @@ const WriteList = () => {
                 시공 전문가 리뷰를 작성하고 포인트도 받아 보세요.
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </>
