@@ -16,7 +16,11 @@ const MyHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+  const [isWriteListVisible, setIsWriteListVisible] = useState(false);
 
+  const toggleWriteList = () => {
+    setIsWriteListVisible(!isWriteListVisible);
+  };
   return (
     <div style={{ position: "sticky", top: 0, zIndex: "10" }}>
       <Navbar
@@ -308,7 +312,9 @@ const MyHeader = () => {
                       background: "#35C5F0",
                       fontSize: "14px",
                       color: "white",
+                      cursor: "pointer",
                     }}
+                    onClick={toggleWriteList}
                   >
                     글쓰기
                     <svg
@@ -320,12 +326,12 @@ const MyHeader = () => {
                       <path
                         fill="none"
                         stroke="#ffffff"
-                        stroke-linecap="square"
+                        strokeLinecap="square"
                         d="m14 5l-6.5 7L1 5"
                       />
                     </svg>
                   </div>
-                  <WriteList />
+                  {isWriteListVisible && <WriteList />}
                   {/*</div>*/}
                 </NavLink>
               </NavItem>
