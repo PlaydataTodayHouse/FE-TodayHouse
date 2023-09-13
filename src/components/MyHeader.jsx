@@ -9,8 +9,8 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Input,
 } from "reactstrap";
+import WriteList from "./WriteList";
 
 const MyHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -325,6 +325,8 @@ const MyHeader = () => {
                       />
                     </svg>
                   </div>
+                  <WriteList />
+                  {/*</div>*/}
                 </NavLink>
               </NavItem>
             </Nav>
