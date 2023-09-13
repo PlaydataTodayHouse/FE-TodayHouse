@@ -18,7 +18,7 @@ const MyHeader = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div style={{ position: "sticky", top: 0 }}>
+    <div style={{ position: "sticky", top: 0, zIndex: "10" }}>
       <Navbar
         color="white"
         light
