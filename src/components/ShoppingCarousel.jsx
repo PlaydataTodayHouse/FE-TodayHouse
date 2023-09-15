@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import ArrowButton from './ArrowButton';
 
 function ShoppingCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [
-    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/ImageEvent1.png?raw=true', link: '/event1' },
-    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/ImageEvent2.png?raw=true', link: '/event2' },
-    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/ImageEvent3.png?raw=true', link: '/event3' },
-    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/ImageEvent4.png?raw=true', link: '/event4' }
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [hover, setHover] = useState(false);
+    const images = [
+    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/eventCarouselSlide/ImageEvent1.png?raw=true', link: '/event1' },
+    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/eventCarouselSlide/ImageEvent2.png?raw=true', link: '/event2' },
+    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/eventCarouselSlide/ImageEvent3.png?raw=true', link: '/event3' },
+    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/eventCarouselSlide/ImageEvent4.png?raw=true', link: '/event4' }
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 2000);
+    
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -23,41 +33,52 @@ function ShoppingCarousel() {
       alignItems: 'center',
       position: 'relative',
       maxWidth: '1920px',
+      overflow: 'hidden',
     },
     button: {
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      color: 'white',
+      backgroundColor: 'transparent',
       border: 'none',
       cursor: 'pointer',
-      padding: '10px 20px',
-      fontSize: '1.5rem',
-      transition: 'background-color 0.3s',
-      borderRadius: '50%', // 원형 버튼을 위한 스타일
-      width: '40px',  // 원의 크기 조절
-      height: '40px', // 원의 크기 조절
+      width: '40px',
+      height: '40px',
+      flexShrink: 0,
+      opacity: hover ? 1 : 0,
+      transition: 'opacity 0.3s',
     },
     prevButton: {
       position: 'absolute',
-      left: '-50px',
+      left: '5rem',
+      top: '50%',
+      transform: 'translateY(-50%)',
     },
     nextButton: {
       position: 'absolute',
-      right: '-50px',
+      right: '5rem',
+      top: '50%',
+      transform: 'translateY(-50%)',
     },
     image: {
       width: '1920px',
-      height: '320px',
+      height: '380px',
       display: 'block',
     },
   };
 
   return (
-    <div style={styles.container}>
-      <button style={{ ...styles.button, ...styles.prevButton }} onClick={handlePrev}>&lt;</button>
+    <div 
+      style={styles.container} 
+      onMouseEnter={() => setHover(true)} 
+      onMouseLeave={() => setHover(false)}
+    >
+      <button style={{ ...styles.button, ...styles.prevButton }} onClick={handlePrev}>
+        <ArrowButton direction="left" />
+      </button>
       <a href={images[currentIndex].link}>
         <img src={images[currentIndex].src} alt={`Event ${currentIndex + 1}`} style={styles.image} />
       </a>
-      <button style={{ ...styles.button, ...styles.nextButton }} onClick={handleNext}>&gt;</button>
+      <button style={{ ...styles.button, ...styles.nextButton }} onClick={handleNext}>
+        <ArrowButton direction="right" />
+      </button>
     </div>
   );
 }
