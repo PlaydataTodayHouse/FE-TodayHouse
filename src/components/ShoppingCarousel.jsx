@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 function ShoppingCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    { src: 'image1.jpg', link: '/event1' },
-    { src: 'image2.jpg', link: '/event2' },
-    { src: 'image3.jpg', link: '/event3' },
-    { src: 'image4.jpg', link: '/event4' },
+    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/saleEvent1.jpeg?raw=true', link: '/event1' },
+    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/saleEvent2.jpeg?raw=true', link: '/event2' },
+    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/saleEvent3.jpeg?raw=true', link: '/event3' },
+    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/saleEvent4.jpg?raw=true', link: '/event4' }
   ];
 
   const handleNext = () => {
@@ -22,7 +22,7 @@ function ShoppingCarousel() {
       display: 'flex',
       alignItems: 'center',
       position: 'relative',
-      maxWidth: '600px',
+      maxWidth: '1920px',
     },
     button: {
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -32,6 +32,9 @@ function ShoppingCarousel() {
       padding: '10px 20px',
       fontSize: '1.5rem',
       transition: 'background-color 0.3s',
+      borderRadius: '50%', // 원형 버튼을 위한 스타일
+      width: '40px',  // 원의 크기 조절
+      height: '40px', // 원의 크기 조절
     },
     prevButton: {
       position: 'absolute',
@@ -42,8 +45,8 @@ function ShoppingCarousel() {
       right: '-50px',
     },
     image: {
-      width: '100%',
-      height: 'auto',
+      width: '1920px',
+      height: '320px',
       display: 'block',
     },
   };
