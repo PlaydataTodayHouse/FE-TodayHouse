@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 function ShoppingCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/saleEvent1.jpeg?raw=true', link: '/event1' },
-    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/saleEvent2.jpeg?raw=true', link: '/event2' },
-    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/saleEvent3.jpeg?raw=true', link: '/event3' },
-    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/saleEvent4.jpg?raw=true', link: '/event4' }
+    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/ImageEvent1.png?raw=true', link: '/event1' },
+    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/ImageEvent2.png?raw=true', link: '/event2' },
+    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/ImageEvent3.png?raw=true', link: '/event3' },
+    { src: 'https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/ImageEvent4.png?raw=true', link: '/event4' }
   ];
 
   const handleNext = () => {
