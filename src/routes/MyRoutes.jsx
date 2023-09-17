@@ -4,15 +4,17 @@ import MainPage from "../pages/Main";
 import MediaPost from "../pages/MediaPost";
 import MediaPostTemplate from "../templates/MediaPostTemplate";
 import ShoppingPage from "../pages/Shopping";
-import LoginPage from "../pages/Login";
+import SignUp from "../pages/Signup";
+import Login from "../pages/Login";
 
 const MyRoutes = () => {
   return (
     <Routes>
-      <Route path="/login" element={<LoginPage></LoginPage>}></Route>
+      <Route path="/login" element={<Login></Login>}></Route>
+      <Route path="/signup" element={<SignUp></SignUp>}></Route>
       <Route element={<Template />}>
         <Route path="/" element={<MainPage />} />
-        <Route path="/shopping" element={<ShoppingPage/>}/>
+        <Route path="/shopping" element={<ShoppingPage />} />
       </Route>
       <Route element={<MediaPostTemplate />}>
         <Route path="/media-post" element={<MediaPost />} />

@@ -1,11 +1,19 @@
 /* For the container */
 .min-full-flex-center {
   display: flex;
-  min-height: 100%;
-  flex: 1;
-  flex-direction: column;
   justify-content: center;
-  padding: 6px 12px;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 726.364px;
+  margin: auto;
+  padding: 40px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -17,15 +25,16 @@
 
 /* For the logo */
 .logo-container {
-  margin: auto;
+  margin-bottom: 30px;
   width: 100%;
   max-width: 400px;
 }
 
 .logo-image {
+  display: block;
   margin: auto;
-  height: 10%;
-  width: 70%;
+  width: 155px;
+  height: 55px;
 }
 
 .logo-text {
@@ -117,8 +126,8 @@
   width: 300px;
   height: 15px;
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px; /* 버튼 간격 조절을 위해 추가, 필요시 조정하세요 */
+  justify-content: center;
+  gap: 20px;
 }
 
 .reset-btn,
@@ -128,6 +137,7 @@
   width: 93px;
   color: #424242;
   text-align: center;
+  white-space: nowrap;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 13px;
   font-style: normal;
@@ -139,13 +149,17 @@
 
 /* SNS계정으로 간편 로그인/회원가입 텍스트 스타일 */
 .sns-text {
-  width: 157px;
   margin: 35px 0 15px;
   color: #757575;
   font-size: 12px;
   font-weight: normal;
   line-height: 1.33;
   text-align: center;
+  white-space: nowrap;
+}
+
+.sns-icon {
+  margin: 0 5px;
 }
 
 /* 로그인에 문제가 있으신가요? 텍스트 스타일 */
@@ -154,4 +168,36 @@
   color: #c2c8cc;
   font-size: 14px;
   line-height: 18px;
+}
+
+/* 비회원주문하기 텍스트 스타일 */
+.nonmemberOrder-text {
+  width: 143px;
+  color: #424242;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.copyWrite-text {
+  width: 186px;
+  color: #757575;
+  text-align: center;
+  font-family: Noto Sans KR;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 250% */
+  letter-spacing: 0.3px;
+}
+
+.divider {
+  width: 300px;
+  height: 1px;
+  flex-shrink: 0;
+  background: #dbdbdb;
+  margin: 30px 0;
 }

@@ -52,16 +52,16 @@ export default function Login() {
     <>
       <ToastContainer position="top-center" />
       <div className="min-full-flex-center">
-        <div className="logo-container">
-          <img
-            className="logo-image"
-            src="https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/Logo/Logo1.png?raw=true', link: '/'"
-            alt="Logo"
-          />
-          <h2 className="logo-text"> </h2>
-        </div>
-
         <div className="form-container">
+          <div className="logo-container">
+            <img
+              className="logo-image"
+              src="https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/Logo/Logo1.png?raw=true', link: '/'"
+              alt="Logo"
+            />
+            <h2 className="logo-text"> </h2>
+          </div>
+
           <form className="space-y-6" onSubmit={onSubmitHandler}>
             <div>
               <div className="flex items-center justify-between">
@@ -110,11 +110,27 @@ export default function Login() {
           </div>
 
           <p className="sns-text">SNS계정으로 간편 로그인/회원가입</p>
-          <p>페북 카카오</p>
+          <div className="sns-icons">
+            <img
+              src="https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/Logo/Facebook.svg?raw=true"
+              alt="Facebook"
+              className="sns-icon"
+            />
+            <img
+              src="https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/Logo/Kakaotalk.svg?raw=true"
+              alt="Kakaotalk"
+              className="sns-icon"
+            />
+            <img
+              src="https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/Logo/Naver.svg?raw=true"
+              alt="Naver"
+              className="sns-icon"
+            />
+          </div>
           <p className="problem-text">로그인에 문제가 있으신가요?</p>
-          <p>구분선</p>
-          <p>비회원 주문조회하기</p>
-          <p>© playdata, TomorrowHouse</p>
+          <div className="divider"></div>
+          <p className="nonmemberOrder-text">비회원 주문조회하기</p>
+          <p className="copyWrite-text">© playdata, TomorrowHouse</p>
         </div>
       </div>
     </>
