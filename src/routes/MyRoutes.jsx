@@ -6,12 +6,14 @@ import MediaPostTemplate from "../templates/MediaPostTemplate";
 import ShoppingPage from "../pages/Shopping";
 import SignUp from "../pages/Signup";
 import Login from "../pages/Login";
+import PromotionApprove from "../pages/PromotionApprove";
 
 const MyRoutes = () => {
   return (
     <Routes>
-      <Route path="/login" element={<Login></Login>}></Route>
-      <Route path="/signup" element={<SignUp></SignUp>}></Route>
+      <Route path="/login" element={<Login />}></Route>
+      <Route path="/signup" element={<SignUp />}></Route>
+      <Route path="/promotionApprove" element={<PromotionApprove />} />
       <Route element={<Template />}>
         <Route path="/" element={<MainPage />} />
         <Route path="/shopping" element={<ShoppingPage />} />

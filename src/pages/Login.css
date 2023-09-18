@@ -1,12 +1,12 @@
 /* For the container */
-.min-full-flex-center {
+.login-min-full-flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.form-container {
+.login-form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,27 +17,27 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .min-full-flex-center {
+  .login-min-full-flex-center {
     padding-left: 8px;
     padding-right: 8px;
   }
 }
 
 /* For the logo */
-.logo-container {
+.login-logo-container {
   margin-bottom: 30px;
   width: 100%;
   max-width: 400px;
 }
 
-.logo-image {
+.login-logo-image {
   display: block;
   margin: auto;
   width: 155px;
   height: 55px;
 }
 
-.logo-text {
+.login-logo-text {
   margin-top: 10px;
   text-align: center;
   font-size: 2rem;
@@ -47,14 +47,14 @@
 }
 
 /* For the form */
-.form-container {
+.login-form-container {
   margin-top: 10px;
   margin: auto;
   width: 100%;
   max-width: 400px;
 }
 
-.label {
+.login-label {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
@@ -62,7 +62,7 @@
   color: #2d3748;
 }
 
-.input-field {
+.login-input-field {
   display: block;
   width: 300px;
   height: 50px;
@@ -76,13 +76,13 @@
   placeholder-color: #a0aec0;
 }
 
-.input-field:focus {
+.login-input-field:focus {
   ring-width: 2px;
   ring-inset: inset;
   ring-color: #667eea;
 }
 
-.button {
+.login-login-button {
   display: flex;
   width: 300px;
   height: 52px;
@@ -101,28 +101,28 @@
   cursor: pointer;
 }
 
-.button:hover {
+.login-login-button:hover {
   background-color: #5a67d8;
 }
 
-.member-text {
+.login-member-text {
   margin-top: 10px;
   text-align: center;
   font-size: 0.875rem;
   color: #a0aec0;
 }
 
-.member-link {
+.login-member-link {
   font-weight: 500;
   line-height: 1.5;
   color: #667eea;
 }
 
-.member-link:hover {
+.login-member-link:hover {
   color: #5a67d8;
 }
 
-.button-container {
+.login-button-container {
   width: 300px;
   height: 15px;
   display: flex;
@@ -130,8 +130,8 @@
   gap: 20px;
 }
 
-.reset-btn,
-.signup-btn {
+.login-reset-btn,
+.login-signup-btn {
   border: none;
   background-color: transparent;
   width: 93px;
@@ -148,7 +148,7 @@
 }
 
 /* SNS계정으로 간편 로그인/회원가입 텍스트 스타일 */
-.sns-text {
+.login-sns-text {
   margin: 35px 0 15px;
   color: #757575;
   font-size: 12px;
@@ -158,12 +158,12 @@
   white-space: nowrap;
 }
 
-.sns-icon {
-  margin: 0 5px;
+.login-sns-icons .login-sns-icon {
+  margin-right: 10px;
 }
 
 /* 로그인에 문제가 있으신가요? 텍스트 스타일 */
-.problem-text {
+.login-problem-text {
   margin-top: 24px;
   color: #c2c8cc;
   font-size: 14px;
@@ -171,7 +171,7 @@
 }
 
 /* 비회원주문하기 텍스트 스타일 */
-.nonmemberOrder-text {
+.login-nonmemberOrder-text {
   width: 143px;
   color: #424242;
   text-align: center;
@@ -182,7 +182,7 @@
   line-height: 21px;
 }
 
-.copyWrite-text {
+.login-copyWrite-text {
   width: 186px;
   color: #757575;
   text-align: center;
@@ -194,7 +194,7 @@
   letter-spacing: 0.3px;
 }
 
-.divider {
+.login-divider {
   width: 300px;
   height: 1px;
   flex-shrink: 0;

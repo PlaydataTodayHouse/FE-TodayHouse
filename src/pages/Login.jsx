@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import "./Login.css";
 
-export default function Login() {
+export default function LoginPage() {
   const dispatch = useDispatch();
   //로그인 정보
   const [user, setUser] = useState({
@@ -23,7 +23,8 @@ export default function Login() {
     e.preventDefault();
     try {
       const data = await apiNoToken("/api/v1/auth/login", "POST", user);
-      localStorage.setItem("token", data.data);
+      localStorage.setItem("token", data.data.accessToken);
+      localStorage.setItem("refreshToken", data.data.refreshToken);
       dispatch(setState(data));
       nav("/");
     } catch (error) {
@@ -46,26 +47,27 @@ export default function Login() {
       })
     );
   };
+
   //로그인시 이동
   const nav = useNavigate();
   return (
     <>
       <ToastContainer position="top-center" />
-      <div className="min-full-flex-center">
-        <div className="form-container">
-          <div className="logo-container">
+      <div className="login-min-full-flex-center">
+        <div className="login-form-container">
+          <div className="login-logo-container">
             <img
-              className="logo-image"
+              className="login-logo-image"
               src="https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/Logo/Logo1.png?raw=true', link: '/'"
               alt="Logo"
             />
-            <h2 className="logo-text"> </h2>
+            <h2 className="login-logo-text"> </h2>
           </div>
 
-          <form className="space-y-6" onSubmit={onSubmitHandler}>
+          <form className="login-space-y-6" onSubmit={onSubmitHandler}>
             <div>
-              <div className="flex items-center justify-between">
-                <label htmlFor="userId" className="label"></label>
+              <div className="login-flex items-center justify-between">
+                <label htmlFor="userId" className="login-label"></label>
               </div>
               <div>
                 <input
@@ -74,15 +76,15 @@ export default function Login() {
                   type="text"
                   onChange={onChangeHandler}
                   required
-                  className="input-field"
+                  className="login-input-field"
                   placeholder="  아이디"
                 />
               </div>
             </div>
 
             <div>
-              <div className="flex items-center justify-between">
-                <label htmlFor="password" className="label"></label>
+              <div className="login-flex items-center justify-between">
+                <label htmlFor="password" className="login-label"></label>
               </div>
               <div>
                 <input
@@ -91,46 +93,46 @@ export default function Login() {
                   type="password"
                   onChange={onChangeHandler}
                   required
-                  className="input-field"
+                  className="login-input-field"
                   placeholder="  비밀번호"
                 />
               </div>
             </div>
 
             <div>
-              <button type="submit" className="button">
+              <button type="submit" className="login-login-button">
                 로그인
               </button>
             </div>
           </form>
 
-          <div className="button-container">
-            <button className="reset-btn">비밀번호 재설정</button>
-            <button className="signup-btn">회원가입</button>
+          <div className="login-button-container">
+            <button className="login-reset-btn">비밀번호 재설정</button>
+            <button className="login-signup-btn">회원가입</button>
           </div>
 
-          <p className="sns-text">SNS계정으로 간편 로그인/회원가입</p>
-          <div className="sns-icons">
+          <p className="login-sns-text">SNS계정으로 간편 로그인/회원가입</p>
+          <div className="login-sns-icons">
             <img
               src="https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/Logo/Facebook.svg?raw=true"
               alt="Facebook"
-              className="sns-icon"
+              className="login-sns-icon"
             />
             <img
               src="https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/Logo/Kakaotalk.svg?raw=true"
               alt="Kakaotalk"
-              className="sns-icon"
+              className="login-sns-icon"
             />
             <img
               src="https://github.com/PlaydataTodayHouse/FE-TodayHouse/blob/dev/src/images/Logo/Naver.svg?raw=true"
               alt="Naver"
-              className="sns-icon"
+              className="login-sns-icon"
             />
           </div>
-          <p className="problem-text">로그인에 문제가 있으신가요?</p>
-          <div className="divider"></div>
-          <p className="nonmemberOrder-text">비회원 주문조회하기</p>
-          <p className="copyWrite-text">© playdata, TomorrowHouse</p>
+          <p className="login-problem-text">로그인에 문제가 있으신가요?</p>
+          <div className="login-divider"></div>
+          <p className="login-nonmemberOrder-text">비회원 주문조회하기</p>
+          <p className="login-copyWrite-text">© playdata, TomorrowHouse</p>
         </div>
       </div>
     </>
